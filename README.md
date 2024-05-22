@@ -5,6 +5,8 @@ Die Applikation generiert einen QR-Code auf Basis einer beliebigen URL.
 
 
 ## Composer Abhängigkeiten herunterladen
-
+```
+composer update
+```
 
 ## Aufruf
