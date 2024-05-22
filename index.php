@@ -1,5 +1,5 @@
 <?php
-
+// Test kommentar github
 use chillerlan\QRCode\QRCode;
 
     require_once("vendor/autoload.php");
