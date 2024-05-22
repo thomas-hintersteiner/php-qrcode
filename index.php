@@ -1,4 +1,9 @@
 <?php
+
+use chillerlan\QRCode\QRCode;
+
+    require_once("vendor/autoload.php");
+
     $url = '';
     
     if (count($_POST) > 0) {
@@ -24,7 +29,7 @@
 
     <?php if ($url): ?>
         <div>
-            <?= $url ?>
+            <img src="<?php echo (new QRCode())->render($url) ?>">
         </div>
     <?php endif; ?>
 
