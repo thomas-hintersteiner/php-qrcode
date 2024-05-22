@@ -1,4 +1,5 @@
 <?php
+// Test kommentar github
 // Testkommentar lokal
 use chillerlan\QRCode\QRCode;
 
