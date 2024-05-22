@@ -1,5 +1,9 @@
 <?php
-
+    $url = '';
+    
+    if (count($_POST) > 0) {
+        $url = $_POST['url'] ?? '';
+    }
 ?>
 
 <!DOCTYPE html>
@@ -11,5 +15,18 @@
 </head>
 <body>
     <h1>PHP QR-Code</h1>
+
+    <form action="index.php" method="post">
+        <label for="url">URL</label>
+        <input type="url" name="url" id="url" required>
+        <button type="submit">Generieren</button>
+    </form>
+
+    <?php if ($url): ?>
+        <div>
+            <?= $url ?>
+        </div>
+    <?php endif; ?>
+
 </body>
 </html>
