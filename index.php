@@ -1,5 +1,5 @@
 <?php
-
+// Testkommentar lokal
 use chillerlan\QRCode\QRCode;
 
     require_once("vendor/autoload.php");
