@@ -1,10 +1,4 @@
 <?php
-// Test kommentar github
-// Testkommentar lokal
-use chillerlan\QRCode\QRCode;
-
-    require_once("vendor/autoload.php");
-
     $url = '';
     
     if (count($_POST) > 0) {
@@ -18,6 +12,8 @@ use chillerlan\QRCode\QRCode;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHP QR-Code</title>
+
+    <script src="js/qrcode.min.js"></script>
 </head>
 <body>
     <h1>PHP QR-Code</h1>
@@ -29,9 +25,17 @@ use chillerlan\QRCode\QRCode;
     </form>
 
     <?php if ($url): ?>
-        <div>
-            <img src="<?php echo (new QRCode())->render($url) ?>">
-        </div>
+        <div id="qrcode"></div>
+        <script type="text/javascript">
+        var qrcode = new QRCode(document.getElementById("qrcode"), {
+            text: "<?php echo $url; ?>",
+            width: 256,
+            height: 256,
+            colorDark : "#fff",
+            colorLight : "cornflowerblue",
+            correctLevel : QRCode.CorrectLevel.H
+        });
+        </script>
     <?php endif; ?>
 
 </body>
